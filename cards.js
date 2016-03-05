@@ -16,7 +16,6 @@ container.innerHTML += output;
 
 DeleteBtnEl();
 }
-// as;lkdfja;lsdkjfa;sldkfja;sdlkfj
 
 function DeleteBtnEl() {
   for(var i = 0; i < erase.length; i++){
