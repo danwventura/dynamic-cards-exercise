@@ -3,27 +3,31 @@ var create = document.getElementById("create");
 var erase = document.getElementsByClassName("delete");
 var input = document.getElementById("input");
 var container = document.getElementById("container");
-var card = document.getElementsByName("card")
+var card = document.getElementsByClassName("card");
+// var output;
 
 // Creating Event Listener to run createCard on click
 create.addEventListener("click", createCard);
 
 //Function to create card HTML
 function createCard(){
-  var output = '<div class="card"> <section> <p class="text">' + input.value + '</p> </section> <input type="button" class="delete" value="Delete"> </div>';
+ var output = '<div class="card"> <section> <p class="text">' + input.value + '</p> </section> <input type="button" class="delete" value="Delete"> </div>';
 
 container.innerHTML += output;
 
 DeleteBtnEl();
 }
 
+//Function w/ for loop to apply event listeners to all delete buttons
 function DeleteBtnEl() {
   for(var i = 0; i < erase.length; i++){
+    var theCard = card[i]  
+    console.log("theCard", theCard );
     erase[i].addEventListener("click", function(event){
-  card.remove(event.target.parentElement);
-// Figure out why I can delete "container" but not "card"
+    theCard.remove();
 
   })
+// Figure out why I can delete "container" but not "card"
 }
 }
 
